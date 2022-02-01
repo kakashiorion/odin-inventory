@@ -43,10 +43,20 @@ a {
   border-radius: 4px;
   padding: 16px;
   border: 1px solid orange;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-card img {
-  width: 80%;
+  align-self: center;
+  max-width: 50%;
+  margin-bottom: 8px;
+}
+
+.item-detail img {
+  align-self: flex-start;
+  max-height: 200px;
+  margin-bottom: 8px;
 }
 
 .item-card a {
