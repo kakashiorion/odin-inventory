@@ -5,10 +5,11 @@ block content
   div(class='item-detail')
     p Quantity: #{item.qty} 
     p Price: #{item.price}
-    p Category: #{selectedCategory.name}
+    p Category: 
+      a(href=selectedCategory.url) #{selectedCategory.name}
     img(src=item.image)
     hr
     div(class='action-button')
-      a(class='update', href=item.url/+'update/' ) Update Item
-      a(href=item.url/+'delete/' class='delete') Delete Item
+      a(class='update', href=item.url+'/update/' ) Update Item
+      a(class='delete', href=item.url+'/delete/' ) Delete Item
     

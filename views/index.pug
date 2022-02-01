@@ -3,11 +3,17 @@ extends layout
 block content
   h1= title
   div(class='item-list')
-    each item in items
-      div(class='item-card')
-        img(src=item.image) 
-        a(href='/inventory/item/'+item._id) #{item.name}
-        div(class='item-info')
-          p Qty: #{item.qty} 
-          p Price: #{item.price}
+    if items.length>0
+      each item in items
+        div(class='item-card')
+          img(src=item.image) 
+          a(href='/inventory/item/'+item._id) #{item.name}
+          div(class='item-info')
+            p Qty: #{item.qty} 
+            p Price: #{item.price}
+    else
+      p No items in this category.
+      div(class='action-button')
+        a(class='update', href=category.url+'/update/' ) Update Category
+        a(class='delete', href=category.url+'/delete/' ) Delete Category
     

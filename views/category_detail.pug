@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1(class='category-heading')= title
+  div(class='category-detail')
+    p Description: #{thisCategory.description}
+    hr
+    div(class='action-button')
+      a(class='update', href=thisCategory.url+'/update/' ) Update Category
+      a(class='delete', href=thisCategory.url+'/delete/' ) Delete Category
+    

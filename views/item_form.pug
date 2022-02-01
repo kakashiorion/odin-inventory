@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1(class='item-heading')= title
+  div(class='item-detail')
+    form(class='item-form', method='POST')
+        div
+            label(for='name') Item name:
+            input#name(type='text', placeholder='Ex: Amul Butter (100g)' name='name' value=(undefined===item ? '' : item.name))
+            label(for='price') Item price:
+            input#price(type='text', placeholder='Ex: 100' name='price' value=(undefined===item ? '' : item.price))
+            label(for='qty') Item qty:
+            input#qty(type='text', placeholder='Ex: 3' name='qty' value=(undefined===item ? '' : item.qty))
+            label(for='image') Item image URL:
+            input#image(type='text', placeholder='Ex: https://www.bigbasket.com/media/uploads/p/l/104860-2_1-amul-butter-pasteurised.jpg' name='image' value=(undefined===item ? '' : item.image))
+            label(for='category') Select Category:
+            select#select-category(type='select' placeholder='Select Category' name='category' required='true')
+                - categories.sort(function(a, b) {let textA = a.name.toUpperCase(); let textB = b.name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+                for cat in categories
+                    if item
+                        option(value=cat._id selected=(item.category.toString()==cat._id.toString() ? 'selected' : false)) #{cat.name}
+                    else
+                        option(value=cat._id) #{cat.name}
+        button(type='submit') SUBMIT

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1(class='item-heading')= title
+  div(class='item-detail')
+    form(class='item-form', method='POST')
+        div
+            label(for='name') Category name:
+            input#name(type='text', placeholder='Ex: Dairy' name='name' value=(undefined===category ? '' : category.name))
+            label(for='description') Category description:
+            input#description(type='text', placeholder='Ex: All products that are made from milk' name='description' value=(undefined===category ? '' : category.description))
+        button(type='submit') SUBMIT

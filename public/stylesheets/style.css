@@ -41,9 +41,8 @@ a {
 
 .item-card {
   border-radius: 4px;
-  /* height: 100px; */
   padding: 16px;
-  border: 1px solid violet;
+  border: 1px solid orange;
 }
 
 .item-card img {
@@ -51,7 +50,7 @@ a {
 }
 
 .item-card a {
-  color: violet;
+  color: orange;
   font-size: 20px;
 }
 
@@ -60,13 +59,15 @@ a {
   justify-content: space-between;
 }
 
-.item-heading {
-  color: violet;
+.item-heading,
+.category-heading {
+  color: orange;
 }
 
 .action-button {
   display: flex;
   gap: 16px;
+  grid-column-start: 1;
 }
 
 .update {
@@ -87,4 +88,37 @@ a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.item-form div {
+  display: grid;
+  gap: 8px;
+}
+
+.item-form div label {
+  font-size: 20px;
+}
+
+.item-form div input {
+  height: 32px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  width: 80%;
+}
+
+.item-form button {
+  background-color: white;
+  color: orange;
+  border: 2px solid orange;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0px;
+  font-size: 20px;
+}
+
+#select-category {
+  height: 32px;
+  width: 80%;
 }
