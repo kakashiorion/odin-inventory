@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  div(class='item-list')
+    each item in items
+      div(class='item-card')
+        img(src=item.image) 
+        a(href='/inventory/item/'+item._id) #{item.name}
+        div(class='item-info')
+          p Qty: #{item.qty} 
+          p Price: #{item.price}
+    

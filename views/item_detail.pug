@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1(class='item-heading')= title
+  div(class='item-detail')
+    p Quantity: #{item.qty} 
+    p Price: #{item.price}
+    p Category: #{selectedCategory.name}
+    img(src=item.image)
+    hr
+    div(class='action-button')
+      a(class='update', href=item.url/+'update/' ) Update Item
+      a(href=item.url/+'delete/' class='delete') Delete Item
+    

@@ -1,8 +1,90 @@
+:root {
+  margin: 0px;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
+  font-size: 16px;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.left-panel {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding: 20px;
+}
+
+.right-panel {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.item-card {
+  border-radius: 4px;
+  /* height: 100px; */
+  padding: 16px;
+  border: 1px solid violet;
+}
+
+.item-card img {
+  width: 80%;
+}
+
+.item-card a {
+  color: violet;
+  font-size: 20px;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-heading {
+  color: violet;
+}
+
+.action-button {
+  display: flex;
+  gap: 16px;
+}
+
+.update {
+  background-color: white;
+  color: orange;
+  border: 2px solid orange;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.delete {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
